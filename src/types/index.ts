@@ -1,7 +1,7 @@
 export type Person = {
     name: string;
-    height: number;
-    mass: number;
+    height: string;
+    mass: string;
     gender: string;
     homeworld: string;
 }
