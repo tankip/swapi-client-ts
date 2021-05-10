@@ -1,7 +1,7 @@
 import React from 'react'
 import { useLazyQuery } from '@apollo/client';
 import { SEARCH_QUERY } from '../schemas';
-import { SeachQuery } from '../types';
+import { SearchQuery } from '../types';
 import People from '../components/People';
 import { Input, Button, Flex, Spacer, Heading, Alert, AlertIcon } from "@chakra-ui/react"
 import Loading from '../components/ui/Loading';
@@ -9,7 +9,7 @@ import Loading from '../components/ui/Loading';
 const Search = () => {
 
     const [searchText, setSearchText] = React.useState<string>('');
-    const [searchPeople, { loading, error, data }] = useLazyQuery<SeachQuery>(SEARCH_QUERY);
+    const [searchPeople, { loading, error, data }] = useLazyQuery<SearchQuery>(SEARCH_QUERY);
 
     const handleSearch = () => {
         searchPeople({
@@ -29,16 +29,17 @@ const Search = () => {
                     value={searchText}
                     onChange={(e) => setSearchText(e.target.value)}
                     mr={4}
+                    data-testid="searchText"
                 />
                 <Spacer />
-                <Button variant="outline" onClick={handleSearch}>search</Button>
+                <Button data-testid="button" variant="outline" onClick={handleSearch}>search</Button>
 
             </Flex>
 
             {loading && <Loading />}
 
             {error &&
-                <Alert status="error">
+                <Alert status="error" data-testid="error">
                     <AlertIcon />
                     {error.message}
                 </Alert>

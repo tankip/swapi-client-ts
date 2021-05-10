@@ -5,7 +5,7 @@ import { List, ListItem, Divider } from '@chakra-ui/react';
 
 const People = ({ people }: { people: PersonType[] }) => {
     return (
-        <List spacing={3} my={8}>
+        <List data-testid="people" spacing={3} my={8}>
             { people.map((person, key) => (
                 <React.Fragment key={key}>
                     <ListItem key={key}>

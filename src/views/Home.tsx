@@ -36,7 +36,7 @@ const Home = () => {
         <Box my={8}>
             {loading && <Loading />}
             {error &&
-                <Alert status="error">
+                <Alert status="error" data-testid="error">
                     <AlertIcon />
                     {error.message}
                 </Alert>

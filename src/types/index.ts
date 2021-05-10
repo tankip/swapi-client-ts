@@ -22,7 +22,7 @@ export type PeopleQuery = {
     people: PeopleResult;
 }
 
-export type SeachQuery = {
+export type SearchQuery = {
     search: SearchResult;
 }
 
