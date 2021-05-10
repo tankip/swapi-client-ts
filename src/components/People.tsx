@@ -8,7 +8,7 @@ const People = ({ people }: { people: PersonType[] }) => {
         <List data-testid="people" spacing={3} my={8}>
             { people.map((person, key) => (
                 <React.Fragment key={key}>
-                    <ListItem key={key}>
+                    <ListItem data-testid="person" key={key}>
                         <Person person={person} />
                     </ListItem>
                     <Divider />

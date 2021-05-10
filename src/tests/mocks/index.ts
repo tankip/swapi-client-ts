@@ -1,5 +1,6 @@
 import { GraphQLError } from 'graphql';
 import { PEOPLE_QUERY, SEARCH_QUERY } from '../../schemas';
+import { Person } from '../../types';
 
 export const peopleSuccessMock = () => {
     return {
@@ -94,3 +95,27 @@ export const searchErrorMock = () => {
         }
     }
 }
+
+export const people: Person[] = [
+    {
+        "name": "Luke Skywalker",
+        "height": "172",
+        "mass": "77",
+        "gender": "male",
+        "homeworld": "http://swapi.dev/api/planets/1/"
+    },
+    {
+        "name": "C-3PO",
+        "height": "167",
+        "mass": "75",
+        "gender": "n/a",
+        "homeworld": "http://swapi.dev/api/planets/1/"
+    },
+    {
+        "name": "R2-D2",
+        "height": "96",
+        "mass": "32",
+        "gender": "n/a",
+        "homeworld": "http://swapi.dev/api/planets/8/"
+    }
+]
