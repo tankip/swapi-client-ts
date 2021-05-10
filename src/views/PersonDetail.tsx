@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useLocation, useHistory } from 'react-router-dom';
 import { Wrap, Box, Heading, Text, Flex, Spacer, Button } from '@chakra-ui/react';
 
@@ -10,14 +10,17 @@ const PersonDetail = () => {
 
     const state = location.state as LocationState;
 
-    if (!state) {
-        history.push('/');
-    }
+    useEffect(() => {
+        if (!state) {
+            history.push('/');
+        }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [state])
 
     return (
         <>
             { state?.person && (
-                <>
+                <Box data-testid="personDetail">
                     <Flex my={4}>
                         <Spacer />
                         <Button
@@ -50,7 +53,7 @@ const PersonDetail = () => {
                             <Text>{state.person.homeworld}</Text>
                         </Box>
                     </Wrap>
-                </>
+                </Box>
             )}
         </>
     )

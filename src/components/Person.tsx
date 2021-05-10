@@ -12,7 +12,7 @@ const Person = ({ person }: { person: PersonType }) => {
             state: {
                 person
             }
-        }}>
+        }} data-testid="personName">
             <Flex>
                 {person.name}
                 <Spacer />
